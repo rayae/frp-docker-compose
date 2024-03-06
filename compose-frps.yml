@@ -1,0 +1,14 @@
+version: "3.0"
+services:
+  frps:
+    build: .
+    restart: always
+    network_mode: host
+    command: [
+      'frps',
+      '-c',
+      '/etc/frps.toml'
+    ]
+    volumes:
+      - ./frps.toml:/etc/frps.toml
+
